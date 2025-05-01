@@ -8,7 +8,7 @@ export default function () {
   const [selected, setSelected] = useState(null);
 
   function handleSingleSelection(getCurrentID){
-    setSelected(getCurrentID);
+    setSelected(getCurrentID === selected ? null : getCurrentID);
   }
 
   console.log(selected);
