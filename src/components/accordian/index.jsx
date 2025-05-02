@@ -1,5 +1,6 @@
 import { useState } from "react";
 import data from "./Data";
+import './styles.css';
 // Single selection
 
 // Multiple selection
