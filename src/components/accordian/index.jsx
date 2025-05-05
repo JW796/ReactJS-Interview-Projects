@@ -14,14 +14,28 @@ export default function () {
     setSelected(getCurrentID === selected ? null : getCurrentID);
   }
 
-//   function handleMultiSelection() {
+  function handleMultiSelection(getCurrentID) {
+    let cpyMuliple = [...multiple];
+    const findIndexOfCurrentID = cpyMuliple(getCurrentID);
 
-//   }
+    if(findIndexOfCurrentID === -1) cpyMuliple.push(getCurrentID);
+    else cpyMutiple.splice(findIndexOfCurrentID, i);
+
+    setMultiple(cpyMuliple);
+  }
 
   console.log(selected);
   return (
     <div className="wrapper">
-      <button onClick={() => setEnableMultiSelection(!enableMultiSelection)}>Enable Multi Selection</button>
+      <button
+        onClick={
+          enableMultiSelection
+            ? () => handleMultiSelection(dataItem.id)
+            : () => setEnableMultiSelection(!enableMultiSelection)
+        }
+      >
+        Enable Multi Selection
+      </button>
 
       <div className="accordian">
         {data && data.length > 0 ? (
@@ -37,6 +51,14 @@ export default function () {
               {selected === dataItem.id ? (
                 <div className="content">{dataItem.answer}</div>
               ) : null}
+            {enableMultiSelection 
+                ? multiple.indexOf(dataItem.id) !== -1 && (
+                    <div className="content">{dataItem.answer}</div>
+                )
+                : selected === data.id && (
+                    <div className="content">{dataItem.answer}</div>
+                )
+            }
             </div>
           ))
         ) : (
