@@ -15,16 +15,16 @@ export default function () {
   }
 
   function handleMultiSelection(getCurrentID) {
-    let cpyMuliple = [...multiple];
-    const findIndexOfCurrentID = cpyMuliple(getCurrentID);
+    let cpyMutiple = [...multiple];
+    const findIndexOfCurrentID = cpyMutiple.indexOf(getCurrentID);
 
-    if(findIndexOfCurrentID === -1) cpyMuliple.push(getCurrentID);
-    else cpyMutiple.splice(findIndexOfCurrentID, i);
+    if (findIndexOfCurrentID === -1) cpyMutiple.push(getCurrentID);
+    else cpyMutiple.splice(findIndexOfCurrentID, 1);
 
-    setMultiple(cpyMuliple);
+    setMultiple(cpyMutiple);
   }
 
-  console.log(selected);
+  console.log(selected, multiple);
   return (
     <div className="wrapper">
       <button
@@ -33,6 +33,7 @@ export default function () {
             ? () => handleMultiSelection(dataItem.id)
             : () => setEnableMultiSelection(!enableMultiSelection)
         }
+        className="Title"
       >
         Enable Multi Selection
       </button>
@@ -51,14 +52,13 @@ export default function () {
               {selected === dataItem.id ? (
                 <div className="content">{dataItem.answer}</div>
               ) : null}
-            {enableMultiSelection 
+              {enableMultiSelection
                 ? multiple.indexOf(dataItem.id) !== -1 && (
                     <div className="content">{dataItem.answer}</div>
-                )
+                  )
                 : selected === data.id && (
                     <div className="content">{dataItem.answer}</div>
-                )
-            }
+                  )}
             </div>
           ))
         ) : (
