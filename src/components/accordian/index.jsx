@@ -29,9 +29,7 @@ export default function () {
     <div className="wrapper">
       <button
         onClick={
-          enableMultiSelection
-            ? () => handleMultiSelection(dataItem.id)
-            : () => setEnableMultiSelection(!enableMultiSelection)
+          () => setEnableMultiSelection(!enableMultiSelection)
         }
         className="Title"
       >
@@ -43,7 +41,11 @@ export default function () {
           data.map((dataItem) => (
             <div className="item">
               <div
-                onClick={() => handleSingleSelection(dataItem.id)}
+                onClick={
+                  enableMultiSelection
+                    ? () => handleMultiSelection(dataItem.id)
+                    : () => handleSingleSelection(dataItem.id)
+                }
                 className="title"
               >
                 <h3>{dataItem.question}</h3>
