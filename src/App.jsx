@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Accordian from './components/accordian'
+import RandomColor from './components/random color'
 
 function App() {
   return (
@@ -8,6 +9,9 @@ function App() {
       <div className="App">
       {/* Accordian component */}
       <Accordian />
+
+      {/* Random Color Component */}
+      <RandomColor/>
         
       </div>
     </>
