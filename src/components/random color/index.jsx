@@ -16,12 +16,16 @@ export default function RandomColor() {
         for(let i = 0; i < 6; i++) {
             hexColor += hex [randomColorUtility(hex.length)]
         }
-        
+
         setColor(hexColor);
     }
 
     function handleCreateRandomRgbColor() {
+       const r = randomColorUtility(256);
+       const g = randomColorUtility(256);
+       const b = randomColorUtility(256);
 
+       setColor(rgb`${r}, ${g}, ${b}`);
     }
 
   return (
@@ -43,6 +47,17 @@ export default function RandomColor() {
       >
         Generate Random Color
       </button>
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        color: '#fff',
+        fontSize: '60px',
+        marginTop: '5px',
+      }}>
+        <h3>{typeOfColor === 'rgb' ? 'RGB Color' : 'HEX Color'}</h3>
+        <h3>{color}</h3>
+      </div>
     </div>
   );
 }
