@@ -11,10 +11,12 @@ export default function LoadMoreData() {
         async function fetchProducts() {
             try{
                 const response = await fetch(
-                  "https://dummyjson.com/products?limit=20&skip=${count === 0 ? 0 : count * 20}"
+                  `https://dummyjson.com/products?limit=20&skip=${count === 0 ? 0 : count * 20}`
                 );
 
                 const result = await response.json();
+
+                console.log(result);
             }catch(e){
                 console.log(e);
             }
@@ -22,7 +24,5 @@ export default function LoadMoreData() {
     }, []);
 
 
-    return <div className="container">
-        {/* https://dummyjson.com/products */}
-        </div>;
+    return <div className="container"></div>;
 }
