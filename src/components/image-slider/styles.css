@@ -5,6 +5,8 @@
   align-items: center;
   width: 600px;
   height: 450px;
+  margin: auto;
+  transform: translate(0%, 25%);
 }
 
 .current-image {
