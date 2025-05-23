@@ -7,7 +7,7 @@ export default function LoadMoreData() {
     const [products, setProducts] = useState([]);
     const [count, setCount] = useState(0);
 
-    useEffect(() => {
+    
         async function fetchProducts() {
             try{
                 setLoading(true)
@@ -17,7 +17,7 @@ export default function LoadMoreData() {
 
                 const result = await response.json();
 
-                if(result && result.products && result,products.length) {
+                if(result && result.products && result.products.length) {
                     setProducts(result.products)
                     setLoading(false);
                 }
@@ -28,8 +28,22 @@ export default function LoadMoreData() {
                 setLoading(false);
             }
         }
-    }, []);
+        useEffect(() => {
+            fetchProducts();
+        }, []);
+
+        if(loading) {
+            return <div>Loading data ! Please wait.</div>
+        }
 
 
-    return <div className="container"></div>;
+    return <div className="container">
+        <div>
+            {
+                products && products.length ?
+                products.map(item=> <div> </div>) 
+                : null 
+            }
+        </div>
+    </div>;
 }
