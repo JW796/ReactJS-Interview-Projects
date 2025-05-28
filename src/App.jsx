@@ -1,10 +1,10 @@
-import { useState } from "react";
 import "./App.css";
 import Accordian from "./components/accordian";
 import RandomColor from "./components/random color";
 import StarRating from "./components/star-rating";
 import ImageSlider from "./components/image-slider";
 import LoadMoreData from "./components/load-more-data";
+import TreeView from "./components/tree-view";
 
 function App() {
   return (
@@ -28,6 +28,9 @@ function App() {
 
         {/* Load More Products */}
         <LoadMoreData />
+
+        {/* Tree View Component / Menu UI Component / Recursive Navigation */}
+        <TreeView/>
       </div>
     </>
   );
