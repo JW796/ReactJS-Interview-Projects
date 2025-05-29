@@ -5,6 +5,7 @@ import StarRating from "./components/star-rating";
 import ImageSlider from "./components/image-slider";
 import LoadMoreData from "./components/load-more-data";
 import TreeView from "./components/tree-view";
+import menus from "./components/tree-view/data";
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
         <LoadMoreData />
 
         {/* Tree View Component / Menu UI Component / Recursive Navigation */}
-        <TreeView/>
+        <TreeView menus={menus}/>
       </div>
     </>
   );
