@@ -6,6 +6,7 @@ import ImageSlider from "./components/image-slider";
 import LoadMoreData from "./components/load-more-data";
 import TreeView from "./components/tree-view";
 import menus from "./components/tree-view/data";
+import QRCodeGenerator from "./components/qr-code-generator";
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
 
         {/* Tree View Component / Menu UI Component / Recursive Navigation */}
         <TreeView menus={menus}/>
+
+        {/* QR Code Generator */}
+        < QRCodeGenerator/>
       </div>
     </>
   );
