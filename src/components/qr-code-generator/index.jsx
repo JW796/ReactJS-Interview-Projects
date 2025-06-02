@@ -1,9 +1,9 @@
 export default function QRCodeGenerator() {
-  const [grCode, setQrCode] = useState("");
+  const [qrCode, setQrCode] = useState("");
   const [input, setInput] = useState("");
 
   function handleGenerateQrCode() {
-    detQrCode(input);
+    setQrCode(input);
   }
 
   return (
@@ -24,7 +24,7 @@ export default function QRCodeGenerator() {
         </button>
       </div>
       <div>
-        <QRCode id="qr-code-value" value="" />
+        <QRCode id="qr-code-value" value={qrCode} size={400} bgColor="#fff" />
       </div>
     </div>
   );
