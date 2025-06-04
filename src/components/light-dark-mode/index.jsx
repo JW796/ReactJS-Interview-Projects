@@ -9,7 +9,9 @@ export default function LightDarkMode(){
         setTheme(theme === 'light' ? 'dark' : 'light')
     }
 
-    return <div className="light-dark-mode">
+    // console.log(theme) 
+
+    return <div className="light-dark-mode" data-theme={theme}>
         <div className="container">
             <p>Light Dark Mode</p>
             <button onClick={handleToggleTheme}>Change Theme</button>
