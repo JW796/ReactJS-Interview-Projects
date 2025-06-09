@@ -1,4 +1,5 @@
 import useLocalStorage from "./useLocalStorage"
+import './theme.css'
 
 
 export default function LightDarkMode(){
@@ -9,7 +10,7 @@ export default function LightDarkMode(){
         setTheme(theme === 'light' ? 'dark' : 'light')
     }
 
-    // console.log(theme) 
+    console.log(theme) 
 
     return <div className="light-dark-mode" data-theme={theme}>
         <div className="container">
