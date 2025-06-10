@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import './styles.css';
+import "./styles.css";
 
 export default function LoadMoreData() {
   const [loading, setLoading] = useState(false);
@@ -19,7 +19,7 @@ export default function LoadMoreData() {
       const result = await response.json();
 
       if (result && result.products && result.products.length) {
-        setProducts((prevData) =>  [...prevData, ...result.products]);
+        setProducts((prevData) => [...prevData, ...result.products]);
         setLoading(false);
       }
 
@@ -34,9 +34,7 @@ export default function LoadMoreData() {
   }, [count]);
 
   useEffect(() => {
-
-    if(products && products.length === 100) setDisableButton(true);
-
+    if (products && products.length === 100) setDisableButton(true);
   }, [products]);
 
   if (loading) {
@@ -56,10 +54,10 @@ export default function LoadMoreData() {
           : null}
       </div>
       <div className="button-container">
-        <button onClick={() => (setCount(count + 1))} disabled={disableButton}>Load More Products</button>
-        {
-            disableButton ? <p>You Have Reached 100 Products</p> : null
-        }
+        <button onClick={() => setCount(count + 1)} disabled={disableButton}>
+          Load More Products
+        </button>
+        {disableButton ? <p>You Have Reached 100 Products</p> : null}
       </div>
     </div>
   );

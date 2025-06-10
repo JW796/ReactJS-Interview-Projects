@@ -59,7 +59,11 @@ export default function ImageSlider({ url, limit = 5, page = 1 }) {
               key={imageItem.id}
               alt={imageItem.download_url}
               src={imageItem.download_url}
-              className={currentSlide === index ? "current-image" : "current-image hide-current-image"}
+              className={
+                currentSlide === index
+                  ? "current-image"
+                  : "current-image hide-current-image"
+              }
             />
           ))
         : null}
@@ -70,8 +74,14 @@ export default function ImageSlider({ url, limit = 5, page = 1 }) {
       <span className="circle-indicators">
         {images && images.length
           ? images.map((_, index) => (
-              <button key={index} className={currentSlide === index ? "current-indicator" : "current-indicator inactive-indicator"}
-              onClick={()=> setCurrentSlide(index)}
+              <button
+                key={index}
+                className={
+                  currentSlide === index
+                    ? "current-indicator"
+                    : "current-indicator inactive-indicator"
+                }
+                onClick={() => setCurrentSlide(index)}
               ></button>
             ))
           : null}

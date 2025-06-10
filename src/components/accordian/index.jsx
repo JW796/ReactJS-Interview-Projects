@@ -28,9 +28,7 @@ export default function () {
   return (
     <div className="wrapper">
       <button
-        onClick={
-          () => setEnableMultiSelection(!enableMultiSelection)
-        }
+        onClick={() => setEnableMultiSelection(!enableMultiSelection)}
         className="Title"
       >
         Enable Multi Selection
