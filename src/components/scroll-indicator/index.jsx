@@ -4,6 +4,7 @@ export default function ScrollIndicator({ url }) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
+  const [scrollRate, setScrollRate] = useState(0);
 
   async function fetchData(getUrl) {
     try {
