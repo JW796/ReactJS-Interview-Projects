@@ -34,16 +34,22 @@ export default function ScrollIndicator({ url }) {
       documentElement.clientHeight
     );
 
-    const scrollPercantage = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollPercantage =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
 
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+
+    setScrollRate((scrollPercantage / height) * 100);
   }
 
   useEffect(() => {
     window.addEventListener("scroll", handleScrollRate);
   });
 
-  console.log(data, loading);
+  console.log(data, scrollRate);
 
   return (
     <div>
